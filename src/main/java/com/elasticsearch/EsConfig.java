@@ -14,11 +14,7 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 
 import java.net.InetAddress;
 
-//http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-nosql.html#boot-features-connecting-to-elasticsearch-spring-data
-//https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples/spring-boot-sample-data-elasticsearch/src/main/java/sample/data/elasticsearch
-//http://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/#elasticsearch.repositories
-//http://geekabyte.blogspot.my/2015/08/embedding-elasticsearch-in-spring.html
-//https://github.com/spring-projects/spring-data-elasticsearch/wiki/Spring-Data-Elasticsearch---Spring-Boot---version-matrix
+
 @Configuration
 @EnableElasticsearchRepositories(basePackages = "com.elasticsearch.image.repository")
 public class EsConfig {
@@ -42,7 +38,7 @@ public class EsConfig {
 				.put("action.bulk.compress", false)
 				.put("shield.transport.ssl", enableSsl)
 				.put("request.headers.X-Found-Cluster", EsClusterName)
-				.put("shield.user", "admin:admin") // your shield username and password
+				.put("shield.user", "admin:admin") 
 				.build();
 		Client client = TransportClient.builder()
 				.addPlugin(ShieldPlugin.class)

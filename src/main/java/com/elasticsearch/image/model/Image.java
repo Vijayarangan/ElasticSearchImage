@@ -8,23 +8,15 @@ public class Image {
 
     @Id
     private String id;
-
-   // private String title;
     private String imageURL;
-
-  
-	//private String author;
     private String caption;
-
-    //private String releaseDate;
-    private String height;
-    
-    private String width;
+    private int height;
+    private int width;
 
     public Image() {
     }
 
-    public Image(String id, String imageURL, String caption, String height,String width) {
+    public Image(String id, String imageURL, String caption, int height,int width) {
         this.id = id;
         this.imageURL = imageURL;
         this.caption = caption;
@@ -56,19 +48,19 @@ public class Image {
 		this.caption = caption;
 	}
 
-	public String getHeight() {
+	public int getHeight() {
 		return height;
 	}
 
-	public void setHeight(String height) {
+	public void setHeight(int height) {
 		this.height = height;
 	}
 
-	public String getWidth() {
+	public int getWidth() {
 		return width;
 	}
 
-	public void setWidth(String width) {
+	public void setWidth(int width) {
 		this.width = width;
 	}
 

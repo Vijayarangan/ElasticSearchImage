@@ -42,7 +42,7 @@ public class ImageServiceTest {
     @Test
     public void testSave() {
 
-        Image image = new Image("1001", "http://hi", "Blue Pant", "23","10");
+        Image image = new Image("1001", "http://hi", "Blue Pant", 23,10);
         Image testImage = imageService.save(image);
 
         assertNotNull(testImage.getId());
@@ -55,7 +55,7 @@ public class ImageServiceTest {
     @Test
     public void testFindOne() {
 
-    	Image image = new Image("1002", "http://hello", "Blue Shirt", "13","11");
+    	Image image = new Image("1002", "http://hello", "Blue Shirt", 23,17);
         imageService.save(image);
 
         Image testImage = imageService.findOne(image.getId());
@@ -70,7 +70,7 @@ public class ImageServiceTest {
     @Test
     public void testFindByImageURL() {
 
-    	Image image = new Image("1002", "hello123", "Blue Shirt", "13","11");
+    	Image image = new Image("1002", "hello123", "Blue Shirt", 23,17);
         imageService.save(image);
 
         List<Image> byURL = imageService.findByImageURL(image.getImageURL());
@@ -82,11 +82,11 @@ public class ImageServiceTest {
 
         List<Image> imageList = new ArrayList<>();
 
-        imageList.add(new Image("10010","http://123","Blue Shirt","23","10"));
-        imageList.add(new Image("10020", "http://103", "Blue Pant", "13","10"));
-        imageList.add(new Image("10030", "http://193", "Blue Shoes", "21","10"));
-        imageList.add(new Image("10070", "http://183", "Blue Socks", "01","10"));
-        imageList.add(new Image("10080", "http://163", "Red Rose", "25","10"));
+        imageList.add(new Image("10010","http://123","Blue Shirt",23,17));
+        imageList.add(new Image("10020", "http://103", "Blue Pant", 23,17));
+        imageList.add(new Image("10030", "http://193", "Blue Shoes", 23,17));
+        imageList.add(new Image("10070", "http://183", "Blue Socks", 23,17));
+        imageList.add(new Image("10080", "http://163", "Red Rose", 23,17));
 
         for (Image image : imageList) {
             imageService.save(image);
@@ -103,7 +103,7 @@ public class ImageServiceTest {
     @Test
     public void testDelete() {
 
-        Image image = new Image("10011", "http://go.go", "Yello Tie", "23","17");
+        Image image = new Image("10011", "http://go.go", "Yello Tie", 23,17);
         imageService.save(image);
         imageService.delete(image);
         Image testImage = imageService.findOne(image.getId());
